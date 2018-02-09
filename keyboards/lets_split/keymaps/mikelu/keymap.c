@@ -26,7 +26,9 @@ enum custom_keycodes {
 #define _______  KC_TRNS
 #define XXXXXXX  KC_NO
 #define SFT_ENT  SFT_T(KC_ENT) // Enter when tapped, shift when held
-#define CTL_ESC CTL_T(KC_ESC) // Esc when tapped, ctrl when held
+#define CTL_ESC  CTL_T(KC_ESC) // Esc when tapped, ctrl when held
+#define GUI_CTL  MT(MOD_LGUI, OSM(MOD_LCTL)) // Ctrl when tapped, gui (command) when held
+#define TAP_LWR  OSL(_LOWER) // tap for lower
 
 
 
@@ -41,7 +43,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+------|------+------+------+------+------+------|
  * | Esc  |   ;  |   Q  |   J  |   K  |   X  |   B  |   M  |   W  |   V  |   Z  |  =   |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * | Ctrl |Adjust| Alt  | GUI  |Lower |Space |Enter |Raise | Left | Down |  Up  |Right |
+ * |Lower |Adjust| Alt  | GUI  |Lower |Space |Enter |Raise | Left | Down |  Up  |Right |
  * `-----------------------------------------------------------------------------------'
  *
  *  Hold
@@ -52,14 +54,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+------|------+------+------+------+------+------|
  * | Ctrl |      |      |      |      |      |      |      |      |      |      |      |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * | Ctrl |Adjust| Alt  | GUI  |Lower |      |Shift |Raise |      |      |      |      |
+ * |      |Adjust| Alt  | GUI  |Lower |      |Shift |Raise |      |      |      |      |
  * `-----------------------------------------------------------------------------------'
  */
 [_DVORAK] = KEYMAP( \
   KC_TAB,  KC_QUOT, KC_COMM, KC_DOT,  KC_P,    KC_Y,    KC_F,    KC_G,    KC_C,    KC_R,    KC_L,    KC_SLSH, \
   KC_BSPC, KC_A,    KC_O,    KC_E,    KC_U,    KC_I,    KC_D,    KC_H,    KC_T,    KC_N,    KC_S,    KC_MINS, \
   CTL_ESC, KC_SCLN, KC_Q,    KC_J,    KC_K,    KC_X,    KC_B,    KC_M,    KC_W,    KC_V,    KC_Z,    KC_EQL , \
-  KC_LCTL, ADJUST,  KC_LALT, KC_LGUI, LOWER,   KC_SPC,  SFT_ENT, RAISE,   KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT  \
+  TAP_LWR, ADJUST,  KC_LALT, KC_LGUI,  LOWER,   KC_SPC,  SFT_ENT, RAISE,   KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT  \
 ),
 
 /* Qwerty
@@ -86,7 +88,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+-------------+------+------+------+------+------|
  * | Bksp |   !  |   @  |   #  |   $  |   %  |   ^  |   &  |   *  |   (  |   )  |  -   |
  * |------+------+------+------+------+------|------+------+------+------+------+------|
- * |  Del |   :  |   =  |   {  |   }  |      |      |      |   [  |   ]  |      |  =   |
+ * |  Del |   :  |   =  |   {  |   }  |      |      |   [  |   ]  |      |      |  =   |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * |      |      |      |      |      |             |      | Next | Vol- | Vol+ | Play |
  * `-----------------------------------------------------------------------------------'
