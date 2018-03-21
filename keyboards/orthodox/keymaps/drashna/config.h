@@ -64,11 +64,13 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define RGBLIGHT_EFFECT_KNIGHT_LENGTH 2
 #define RGBLIGHT_EFFECT_SNAKE_LENGTH 2
 #define RGBLIGHT_EFFECT_BREATHE_CENTER 1
+#define RGBLIGHT_SLEEP
 #endif // RGBLIGHT_ENABLE
 
 #ifdef AUDIO_ENABLE
 #define C6_AUDIO
-#define STARTUP_SONG SONG(ZELDA_TREASURE)
+#define STARTUP_SONG SONG(IMPERIAL_MARCH)
+#define NO_MUSIC_MODE
 #endif
 
 #undef PRODUCT
