@@ -97,10 +97,10 @@ enum custom_keycodes {
   LOWER= SAFE_RANGE,
   RAISE,
   ADJUST,
-  TABL,
-  TABR,
-  VIMTABL,
-  VIMTABR
+  TABU,
+  TABD,
+  VIMTABU,
+  VIMTABD
 };
 
 // Make layer undefined do nothing
@@ -123,22 +123,22 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 ),
 [_LOWER] = KEYMAP(
   _______, KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F11,                    KC_F12,  KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  _______, \
-  KC_TILD, KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    TABR,                      VIMTABR, KC_6,    KC_7,    KC_8,    KC_9,    KC_0   , _______, \
-  _______, KC_EXLM, KC_AT,   KC_HASH, KC_DLR,  KC_PERC, TABL,                      VIMTABL, KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN, _______, \
+  KC_TILD, KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    TABU,                      VIMTABU, KC_6,    KC_7,    KC_8,    KC_9,    KC_0   , _______, \
+  _______, KC_EXLM, KC_AT,   KC_HASH, KC_DLR,  KC_PERC, TABD,                      VIMTABD, KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN, _______, \
   _______, KC_COLN, KC_EQL,  KC_LCBR, KC_RCBR, _______, _______,                   _______, _______, KC_LBRC, KC_RBRC, _______, _______, _______, \
   _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, KC_MNXT, KC_VOLD, KC_VOLU, KC_MPLY, _______  \
 ),
 [_RAISE] = KEYMAP(
   _______, _______, _______, _______, _______, _______, _______,                   _______, _______, _______, _______, _______, _______, _______, \
-  _______, KC_F9,   KC_F10,  KC_F11,  KC_F12,  _______, TABR,                      VIMTABR, _______, KC_P7,   KC_P8,   KC_P9,   KC_PSLS, _______, \
-  _______, KC_F5,   KC_F6,   KC_F7,   KC_F8,   _______, TABL,                      VIMTABL, _______, KC_P4,   KC_P5,   KC_P6,   KC_PAST, _______, \
+  _______, KC_F9,   KC_F10,  KC_F11,  KC_F12,  _______, TABU,                      VIMTABU, _______, KC_P7,   KC_P8,   KC_P9,   KC_PSLS, _______, \
+  _______, KC_F5,   KC_F6,   KC_F7,   KC_F8,   _______, TABD,                      VIMTABD, _______, KC_P4,   KC_P5,   KC_P6,   KC_PAST, _______, \
   _______, KC_F1,   KC_F2,   KC_F3,   KC_F4,   _______, _______,                   _______, _______, KC_P1,   KC_P2,   KC_P3,   KC_PMNS, _______, \
   _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, KC_PDOT, KC_P0,   KC_PENT, KC_PLUS, _______  \
 ),
 [_ADJUST] = KEYMAP(
   _______, RESET,   _______, _______, _______, _______, _______,                   _______, _______, _______, _______, _______, _______, _______, \
-  _______, _______, _______, KC_UP,   _______, _______, TABR,                      VIMTABR, _______, _______, KC_UP,   _______, _______, _______, \
-  _______, _______, KC_LEFT, KC_DOWN, KC_RGHT, _______, TABL,                      VIMTABL, _______, KC_LEFT, KC_DOWN, KC_RGHT, _______, _______, \
+  _______, _______, _______, KC_UP,   _______, _______, TABU,                      VIMTABU, _______, _______, KC_UP,   _______, _______, _______, \
+  _______, _______, KC_LEFT, KC_DOWN, KC_RGHT, _______, TABD,                      VIMTABD, _______, KC_LEFT, KC_DOWN, KC_RGHT, _______, _______, \
   _______, _______, _______, _______, _______, _______, _______,                   _______, _______, _______, _______, _______, _______, _______, \
   _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______  \
 )
@@ -174,22 +174,22 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       }
       return false;
       break;
-    case VIMTABR:
+    case VIMTABD:
       if (record->event.pressed) {
               SEND_STRING("gt");
       }
       return false;
-    case VIMTABL:
+    case VIMTABU:
       if (record->event.pressed) {
               SEND_STRING("gT");
       }
       return false;
-    case TABR:
+    case TABD:
       if (record->event.pressed) {
              SEND_STRING(SS_DOWN(X_LCTRL)SS_TAP(X_TAB)SS_UP(X_LCTRL));
       }
       return false;
-    case TABL:
+    case TABU:
       if (record->event.pressed) {
              SEND_STRING(SS_DOWN(X_LCTRL)SS_DOWN(X_LSHIFT)SS_TAP(X_TAB)SS_UP(X_LCTRL)SS_UP(X_LSHIFT));
       }
