@@ -100,7 +100,7 @@ enum custom_keycodes {
   TABU,
   TABD,
   VIMTABU,
-  VIMTABD
+  VIMTABD,
 };
 
 // Make layer undefined do nothing
@@ -111,6 +111,8 @@ enum custom_keycodes {
 #define CTL_ESC  CTL_T(KC_ESC) // Esc when tapped, ctrl when held
 #define GUI_CTL  MT(MOD_LGUI, OSM(MOD_LCTL)) // Ctrl when tapped, gui (command) when held
 #define TAP_RSE  OSL(_RAISE) // tap to raise
+#define AUTOFIL  LCMD(KC_BSLS) // autofill forms in firefox(1pwd)
+#define SRCHPWD  LCMD(LALT(KC_BSLS)) // open 1pwd extension in firefox
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
@@ -118,21 +120,21 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   KC_ESC,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    XXXXXXX,                   XXXXXXX, KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_DEL,  \
   KC_GRV,  KC_QUOT, KC_COMM, KC_DOT,  KC_P,    KC_Y,    KC_HOME,                   KC_PGUP, KC_F,    KC_G,    KC_C,    KC_R,    KC_L,    KC_BSLS, \
   KC_TAB,  KC_A,    KC_O,    KC_E,    KC_U,    KC_I,    KC_END,                    KC_PGDN, KC_D,    KC_H,    KC_T,    KC_N,    KC_S,    KC_SLSH, \
-  KC_BSPC, KC_SCLN, KC_Q,    KC_J,    KC_K,    KC_X,    ADJUST,                    ADJUST,  KC_B,    KC_M,    KC_W,    KC_V,    KC_Z,    KC_MINS, \
-  CTL_ESC, KC_LSFT, ADJUST,  KC_LALT, KC_LGUI, KC_SPC,  LOWER,   RAISE,   LOWER,   RAISE,  SFT_ENT,  KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, KC_EQL   \
+  KC_BSPC, KC_SCLN, KC_Q,    KC_J,    KC_K,    KC_X,    KC_LALT,                   KC_MEH,  KC_B,    KC_M,    KC_W,    KC_V,    KC_Z,    KC_MINS, \
+  CTL_ESC, KC_LSFT, ADJUST,  KC_LALT, KC_LGUI, KC_SPC,  LOWER,    RAISE,   LOWER,  RAISE,   SFT_ENT, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, KC_EQL   \
 ),
 [_LOWER] = KEYMAP(
   _______, KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F11,                    KC_F12,  KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  _______, \
   KC_TILD, KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    TABU,                      VIMTABU, KC_6,    KC_7,    KC_8,    KC_9,    KC_0   , _______, \
-  _______, KC_EXLM, KC_AT,   KC_HASH, KC_DLR,  KC_PERC, TABD,                      VIMTABD, KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN, _______, \
-  _______, KC_COLN, KC_EQL,  KC_LCBR, KC_RCBR, _______, _______,                   _______, _______, KC_LBRC, KC_RBRC, _______, _______, _______, \
+  _______, KC_EXLM, KC_AT,   KC_HASH, KC_DLR,  KC_PERC, TABD,                      VIMTABD, KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN, KC_BSLS, \
+  _______, TABU,    TABD,    KC_LCBR, KC_RCBR, _______, _______,                   _______, _______, KC_LBRC, KC_RBRC, TABU,    TABD, _______, \
   _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, KC_MNXT, KC_VOLD, KC_VOLU, KC_MPLY, _______  \
 ),
 [_RAISE] = KEYMAP(
   _______, _______, _______, _______, _______, _______, _______,                   _______, _______, _______, _______, _______, _______, _______, \
   _______, KC_F9,   KC_F10,  KC_F11,  KC_F12,  _______, TABU,                      VIMTABU, _______, KC_P7,   KC_P8,   KC_P9,   KC_PSLS, _______, \
-  _______, KC_F5,   KC_F6,   KC_F7,   KC_F8,   _______, TABD,                      VIMTABD, _______, KC_P4,   KC_P5,   KC_P6,   KC_PAST, _______, \
-  _______, KC_F1,   KC_F2,   KC_F3,   KC_F4,   _______, _______,                   _______, _______, KC_P1,   KC_P2,   KC_P3,   KC_PMNS, _______, \
+  _______, KC_F5,   KC_F6,   KC_F7,   KC_F8,   _______, TABD,                      VIMTABD, AUTOFIL, KC_P4,   KC_P5,   KC_P6,   KC_PAST, _______, \
+  _______, KC_F1,   KC_F2,   KC_F3,   KC_F4,   _______, _______,                   _______, SRCHPWD, KC_P1,   KC_P2,   KC_P3,   KC_PMNS, _______, \
   _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, KC_PDOT, KC_P0,   KC_PENT, KC_PLUS, _______  \
 ),
 [_ADJUST] = KEYMAP(

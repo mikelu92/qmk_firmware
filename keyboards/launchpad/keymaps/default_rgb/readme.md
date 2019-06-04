@@ -1,5 +1,4 @@
-Launch Pad
-===
+# Launch Pad
 
 ![Launch Pad](https://i.imgur.com/WVTe0Ku.png)
 
@@ -24,6 +23,16 @@ Make example for this keyboard (after setting up your build environment):
     make launchpad/rev1:default
 
 See [build environment setup](https://docs.qmk.fm/#/getting_started_build_tools) then the [make instructions](https://docs.qmk.fm/#/getting_started_make_guide) for more information.
+
+# Under Glow
+
+![Underglow](https://i.imgur.com/3zFIOmu.jpg)
+
+SpaceCat now provides an underglow add-on kit. Please refer to the picture above for wiring.
+
+Make example for this keyboard (after setting up your build environment):
+
+    make launchpad/rev1:default_rgb
 
 -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 

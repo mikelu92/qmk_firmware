@@ -24,4 +24,6 @@
 #define PERMISSIVE_HOLD
 #define TAPPING_TERM 150
 
+#define PREVENT_STUCK_MODIFIERS
+
 #endif
