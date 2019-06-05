@@ -20,6 +20,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #pragma once
 
+#define LEADER_TIMEOUT 300
 
 /* Use I2C or Serial, not both */
 
