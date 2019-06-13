@@ -1,4 +1,5 @@
+SRC += leader_macros.c
 BACKLIGHT_ENABLE = no
-RGBLIGHT_ENABLE = no
+RGBLIGHT_ENABLE = yes
 AUDIO_ENABLE = no
 LEADER_ENABLE = yes

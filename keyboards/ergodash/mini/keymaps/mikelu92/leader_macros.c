@@ -10,7 +10,7 @@ void leader_func(void) {
 
         SEQ_TWO_KEYS(KC_T, KC_S) {
             // set up my default tmux layout
-            SEND_STRING(SS_LCTRL(SS_LALT("a"))SS_DOWN(X_LSHIFT)SS_TAP(X_QUOTE)SS_UP(X_LSHIFT)SS_LCTRL(SS_LALT("a"))SS_LSFT("5")SS_LCTRL(SS_LALT("a"))":resize-pane -D 15"SS_TAP(X_ENTER));
+            SEND_STRING(SS_LCTRL("a")SS_DOWN(X_LSHIFT)SS_TAP(X_QUOTE)SS_UP(X_LSHIFT)SS_LCTRL("a")SS_LSFT("5")SS_LCTRL("a")":resize-pane -D 15"SS_TAP(X_ENTER));
         }
 
         SEQ_ONE_KEY(KC_N) {

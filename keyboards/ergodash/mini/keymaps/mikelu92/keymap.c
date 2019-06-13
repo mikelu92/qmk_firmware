@@ -33,7 +33,7 @@ enum custom_keycodes {
 #define DSCRN LCTL(LSFT(KC_DOWN)) // BetterTouchTools move cursor down monitor
 #define RSCRN LCTL(LSFT(KC_RIGHT)) // BetterTouchTools move cursor right monitor
 #define CHKESC HYPR(KC_C) //chunkwm leader key
-#define TMUXPRF LCTL(LALT(KC_A)) // tmux leader key
+#define TMUXPRF LCTL(KC_A) // tmux leader key
 #define VIMWIND LCTL(KC_W) // vim windows leader key
 #define CTL_U LCTL(KC_U) // vim page up
 #define CTL_D LCTL(KC_D) // vim page down
@@ -167,4 +167,8 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       break;
   }
   return true;
+}
+
+void matrix_scan_user(void) {
+    leader_func();
 }
