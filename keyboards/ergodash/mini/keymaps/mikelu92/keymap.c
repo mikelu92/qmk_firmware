@@ -59,7 +59,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_DVORAK] = LAYOUT( \
      KC_TAB,  KC_QUOT, KC_COMM, KC_DOT,  KC_P,    KC_Y,   KC_HOME,                        KC_PGUP, KC_F,    KC_G,    KC_C,    KC_R,    KC_L,    KC_SLSH, \
      KC_BSPC, KC_A,    KC_O,    KC_E,    KC_U,    KC_I,   KC_END,                         KC_PGDN, KC_D,    KC_H,    KC_T,    KC_N,    KC_S,    KC_MINS, \
-     KC_LALT, KC_SCLN, KC_Q,    KC_J,    KC_K,    KC_X,   TAP_ALT,                        SFT_ENT, KC_B,    KC_M,    KC_W,    KC_V,    KC_Z,    KC_EQL,  \
+     KC_HYPR, KC_SCLN, KC_Q,    KC_J,    KC_K,    KC_X,   TAP_ALT,                        SFT_ENT, KC_B,    KC_M,    KC_W,    KC_V,    KC_Z,    KC_EQL,  \
      TAP_RSE, TAP_SFT, KC_LEAD, KC_LGUI,          LOWER,  KC_SPC,  CTL_ESC,      SFT_ENT, SFT_ENT, RAISE,            KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT  \
   ),
 
@@ -72,7 +72,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [_LOWER] = LAYOUT( \
     KC_GRV , KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    _______,                        _______, KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_BSLS, \
-    KC_TILD, KC_EXLM, KC_AT,   KC_HASH, KC_DLR,  KC_PERC, _______,                        _______, KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN, KC_DQT , \
+    _______, KC_EXLM, KC_AT,   KC_HASH, KC_DLR,  KC_PERC, _______,                        _______, KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN, KC_DQT , \
     KC_DEL,  KC_COLN, KC_TILD, KC_LCBR, KC_RCBR, _______, _______,                        _______, KC_PIPE, KC_LBRC, KC_RBRC, TABU,    TABD,    COL_EQL, \
     DSP_OFF, WIN_L,   WIN_R,   _______,          _______, _______, _______,      _______, _______, _______,          _______, KC_VOLD, KC_VOLU, KC_MUTE  \
   ),
