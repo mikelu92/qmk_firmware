@@ -5,8 +5,7 @@ LEADER_EXTERNS();
 
 void leader_func(void) {
     LEADER_DICTIONARY() {
-        leading = false;
-        leader_end();
+        leader_timer = timer_read();
 
         SEQ_TWO_KEYS(KC_T, KC_S) {
             // set up my default tmux layout
@@ -17,5 +16,15 @@ void leader_func(void) {
             // update vm time
             SEND_STRING("sudo ntpdate pool.ntp.org"SS_TAP(X_ENTER));
         }
+        leader_end();
+        leading = false;
     }
+}
+
+void leader_start(void) {
+    leader_started = 1;
+}
+
+void leader_end(void) {
+    leader_started = 0;
 }

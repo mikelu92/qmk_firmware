@@ -34,6 +34,20 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // #define EE_HANDS
 
 #define MOUSEKEY_DELAY             75
+
+#ifdef RGBLIGHT_ENABLE
+  #define RGBLIGHT_ANIMATIONS
+  #define RGBLIGHT_HUE_STEP 8
+  #define RGBLIGHT_SAT_STEP 8
+  #define RGBLIGHT_VAL_STEP 8
+  #define RGBLIGHT_LED_MAP { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10 }
+#endif
+
+#ifdef COMBO_ENABLE
+  #define COMBO_COUNT 1
+  #define COMBO_TERM 300
+#endif
+
 #define MOUSEKEY_INTERVAL          25
 #define MOUSEKEY_MAX_SPEED         12
 #define MOUSEKEY_TIME_TO_MAX       10
